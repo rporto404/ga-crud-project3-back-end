@@ -8,7 +8,7 @@ const app = express();
 
 // might not need this here as well
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 // app.get("/", (req, res) => {
 //   res.send("Hello World!");
