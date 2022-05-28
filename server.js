@@ -1,16 +1,18 @@
-const express = require('express');
-const mongoose = require('mongoose')
-const cors = require('cors');
-const env = require('dotenv').config({ path: '.env' });
+const express = require("express");
+const mongoose = require("mongoose");
+// const cors = require("cors");
+const env = require("dotenv").config({ path: ".env" });
+const storeController = require("./controller/store.js");
 
 const app = express();
 
+// might not need this here as well
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 
-app.get('/', (req,res) => {
-  res.send('Hello World!');
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
 
 // app.listen(3000, () => {
 //   console.log('listening...');
@@ -52,5 +54,13 @@ db.on("disconnected", () => console.log("mongo disconnected"));
 // db.on("error", (err) => console.log(err.message + " is Mongod not running?"));
 // db.on("connected", () => console.log("mongo connected: ", mongoURI));
 // db.on("disconnected", () => console.log("mongo disconnected"));
+
+// change to /movies as default route name
+app.use("/store", storeController);
+
+// maybe we dont need
+// db.once("open", () => {
+//   console.log("Connected to mongod ...");
+// });
 
 app.listen(PORT, () => console.log("Listening on port:", PORT));
