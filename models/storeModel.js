@@ -13,7 +13,7 @@ const StoreSchema = new mongoose.Schema(
       min: 1,
       max: 5
     },
-    soldOut: Boolean
+    soldOut: Boolean,
   },
   { timestamps: true }
 );
