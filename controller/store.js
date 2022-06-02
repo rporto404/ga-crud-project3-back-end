@@ -29,26 +29,28 @@ router.post("/", (req, res) => {
 
 // get data with search
 router.get("/", (req, res) => {
-  if (req.query.search) {
-    const regex = new RegExp(escapeRegex(req.query.search));
-    Store.find({ itemName: regex }, (err, searchItem) => {
-      if (err) {
-        console.log(err.message);
-      } else {
-        if (searchItem === undefined) {
-          const result = "Search Found Nothing";
-          res.json(result);
-        } else {
-          res.json(searchItem);
-        }
-      }
-    })
-  } else {
-    Store.find({}, (err, foundStore) => {
-      res.json(foundStore);
-    });
-  }
+  console.log(req.query.search);
+  Store.find({ itemName:  'curry' }, (err, foundStore) => {
+    res.json(foundStore);
+  });
+  console.log(req.query.search);
 });
+
+// if (req.query.search) {
+//   const regex = new RegExp(escapeRegex(req.query.search));
+//   Store.find({ itemName: regex }, (err, searchItem) => {
+//     if (err) {
+//       console.log(err.message);
+//     } else {
+//       if (searchItem === undefined) {
+//         const result = "Search Found Nothing";
+//         res.json(result);
+//       } else {
+//         res.json(searchItem);
+//       }
+//     }
+//   })
+// } else {
 
 // delete data
 router.delete("/:id", (req, res) => {
