@@ -15,6 +15,11 @@ router.use(express.json());
 router.use(cors());
 router.use(express.urlencoded({ extended: false }));
 
+// parsing function
+const escapeRegex = (text) => {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
 // post data
 router.post("/", (req, res) => {
   Store.create(req.body, (err, createdStore) => {
@@ -22,11 +27,27 @@ router.post("/", (req, res) => {
   });
 });
 
-// get data
+// get data with search
 router.get("/", (req, res) => {
-  Store.find({}, (err, foundStore) => {
-    res.json(foundStore);
-  });
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search));
+    Store.find({ name: regex }, (err, searchItem) => {
+      if (err) {
+        console.log(err.message);
+      } else {
+        if (searchItem === undefined) {
+          const result = "Search Found Nothing";
+          res.json(result);
+        } else {
+          res.json(searchItem);
+        }
+      }
+    })
+  } else {
+    Store.find({}, (err, foundStore) => {
+      res.json(foundStore);
+    });
+  }
 });
 
 // delete data
