@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
   if (req.query.search) {
     const regex = new RegExp(escapeRegex(req.query.search));
-    Store.find({ name: regex }, (err, searchItem) => {
+    Store.find({ itemName: regex }, (err, searchItem) => {
       if (err) {
         console.log(err.message);
       } else {
