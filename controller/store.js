@@ -27,13 +27,11 @@ router.post("/", (req, res) => {
   });
 });
 
-// get data with search
+// get data
 router.get("/", (req, res) => {
-  console.log(req.query.search);
-  Store.find({ itemName:  'curry' }, (err, foundStore) => {
+  Store.find({}, (err, foundStore) => {
     res.json(foundStore);
   });
-  console.log(req.query.search);
 });
 
 // if (req.query.search) {
