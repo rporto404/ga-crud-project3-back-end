@@ -29,6 +29,7 @@ router.get("/", (req, res) => {
   });
 });
 
+
 // delete data
 router.delete("/:id", (req, res) => {
   Store.findByIdAndRemove(req.params.id, { new: true }, (err, deletedStore) => {

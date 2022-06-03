@@ -1,7 +1,7 @@
 module.exports = [
   {
     itemName: "Basketball",
-    category: "Sports",
+    category: "sports",
     description: "A ball used to play the sport basketball",
     price: 19.99,
     image:
