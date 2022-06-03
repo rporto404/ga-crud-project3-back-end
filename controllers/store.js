@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 
+// store model
 const Store = require("../models/storeModel");
 
 // seed data for testing
@@ -54,11 +55,12 @@ module.exports = router;
 
 // *** seed data into database once and comment out after ***
 
+// Create for Store
+
 // Store.create(storeSeed, (err, data) => {
 //   if (err) console.log(err.message);
 //   console.log("Added provided movie data....");
 // });
-
 // *** Drop collection ***
 
 // Store.collection.drop();
