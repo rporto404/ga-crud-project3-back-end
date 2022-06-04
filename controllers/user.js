@@ -13,25 +13,6 @@ router.use(express.json());
 router.use(cors());
 router.use(express.urlencoded({ extended: false }));
 
-// ---------------------testing user routes--------------------------
-// get users data
-// router.get("/", (req, res) => {
-//   User.find({}, (err, foundUsers) => {
-//     res.json(foundUsers);
-//   });
-// });
-
-// // get user data
-// router.get("/:id", (req, res) => {
-//   User.findById(req.params.id, req.body, (err, foundUser) => {
-//     res.json(foundUser);
-//   });
-// });
-
-// ---------------------End testing user routes--------------------------
-
-// code from task app re-work!
-
 // testing creating new user
 router.post("/register", async (req, res) => {
   const user = new User(req.body);
@@ -47,7 +28,6 @@ router.post("/register", async (req, res) => {
 
 // testing login functionality
 router.post("/login", async (req, res) => {
-  //   console.log("route");
   try {
     const user = await User.findByCredentials(
       req.body.email,
@@ -55,93 +35,36 @@ router.post("/login", async (req, res) => {
     );
     const token = await user.generateAuthToken();
     res.send({ user, token });
+    console.log("Success!");
   } catch (err) {
     res.status(400).send(err);
   }
 });
-
-// testing logout functionality
-router.post("/logout", auth, async (req, res) => {
-  try {
-    req.user.tokens = req.user.tokens.filter((token) => {
-      return token.token !== req.token;
-    });
-    await req.user.save();
-    res.send();
-  } catch (err) {
-    res.status(500).send();
-  }
-});
-
-// testing logout all
-// router.post("/logoutAll", auth, async (req, res) => {
-//   try {
-//     req.user.tokens = [];
-//     await req.user.save();
-//     res.send();
-//   } catch (err) {
-//     res.status(500).send(err);
-//   }
-// });
 
 // testing add to cart
 router.post("/me/addtocart", async (req, res) => {
   const cart = req.body.cart;
   try {
-    const user = User.find({ email: req.body.email });
-    console.log(user);
-    res.send(req.body);
-  } catch (err) {
-    console.log(err);
-    res.status(400).send(err);
-  }
-});
-
-router.get("/me", async (req, res) => {
-  //   console.log(req.body);
-  //   const user = User.find({ email: req.body.email });
-  res.send(res.user);
-});
-
-router.post("/email", async (req, res) => {
-  try {
-    const user = await User.findByCredentials(
-      req.body.email,
-      req.body.password
+    const user = await User.findOneAndUpdate(
+      { email: req.body.email },
+      { $push: { cart: cart } }
     );
-    res.send({ user });
+    res.json(user.cart);
   } catch (err) {
     console.log(err);
     res.status(400).send(err);
   }
 });
 
-router.patch("/me", auth, async (req, res) => {
-  const updates = Object.keys(req.body);
-  const allowedUpdates = ["name", "email", "password"];
-  const isValidUpdate = updates.every((update) =>
-    allowedUpdates.includes(update)
-  );
-
-  if (!isValidUpdate) {
-    return res.status(400).send({ error: "Invalid updates!" });
-  }
+router.post("/me", async (req, res) => {
   try {
-    // we know they logged in so dont need a test case for that
-    updates.forEach((update) => (req.user[update] = req.body[update])); // needed to get middleware to run correctly
-    await req.user.save();
-    res.send(req.user);
+    const user = await User.findOne({ email: req.body.email });
+    const returnUser = user.name;
+    const returnEmail = user.email;
+    res.json({ returnUser, returnEmail });
   } catch (err) {
+    console.log(err);
     res.status(400).send(err);
-  }
-});
-
-router.delete("/me", auth, async (req, res) => {
-  try {
-    await req.user.remove();
-    res.send(req.user);
-  } catch (err) {
-    res.status(500).send(err);
   }
 });
 
@@ -160,14 +83,52 @@ router.delete("/delete_users", (req, res) => {
 // export to server
 module.exports = router;
 
-// *** seed data into database once and comment out after ***
-// Create for user
-
-// User.create(userSeed, (err, data) => {
-//   if (err) console.log(err.message);
-//   console.log("Added provided user data....");
-// });
-
 // Drop user sub db
 
 // User.collection.drop();
+
+// --------------------- Graveyard ---------------------
+
+// update me not using.
+
+// router.patch("/me", async (req, res) => {
+//   const updates = Object.keys(req.body);
+//   const allowedUpdates = ["name", "email", "password"];
+//   const isValidUpdate = updates.every((update) =>
+//     allowedUpdates.includes(update)
+//   );
+
+//   if (!isValidUpdate) {
+//     return res.status(400).send({ error: "Invalid updates!" });
+//   }
+//   try {
+//     // we know they logged in so dont need a test case for that
+//     updates.forEach((update) => (req.user[update] = req.body[update])); // needed to get middleware to run correctly
+//     await req.user.save();
+//     res.send(req.user);
+//   } catch (err) {
+//     res.status(400).send(err);
+//   }
+// });
+
+// router.delete("/me", async (req, res) => {
+//   try {
+//     await req.user.remove();
+//     res.send(req.user);
+//   } catch (err) {
+//     res.status(500).send(err);
+//   }
+// });
+
+// testing logout functionality
+// router.post("/logout", auth, async (req, res) => {
+//   try {
+//     req.user.tokens = req.user.tokens.filter((token) => {
+//       return token.token !== req.token;
+//     });
+//     await req.user.save();
+//     res.send();
+//   } catch (err) {
+//     res.status(500).send();
+//   }
+// });
