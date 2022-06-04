@@ -53,12 +53,6 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// userSchema.virtual("tasks", {
-//   ref: "Task",
-//   localField: "_id",
-//   foreignField: "owner",
-// });
-
 userSchema.methods.toJSON = function () {
   // (this) refer's to the user in schema
   const user = this;
@@ -75,8 +69,6 @@ userSchema.methods.generateAuthToken = async function () {
   const user = this;
   const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
 
-  // dont need possibly
-  // user.tokens = user.tokens.concat({ token });
   await user.save();
   return token;
 };
