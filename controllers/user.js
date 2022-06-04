@@ -3,7 +3,7 @@ const cors = require("cors");
 const auth = require("../middleware/auth");
 
 const User = require("../models/userModel");
-const userSeed = require("../models/userSeed.js");
+// const userSeed = require("../models/userSeed.js");
 
 // config
 const router = express.Router();
