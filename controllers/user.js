@@ -49,7 +49,7 @@ router.post("/me/addtocart", async (req, res) => {
       { email: req.body.email },
       { $push: { cart: cart } }
     );
-    res.json(user.cart);
+    res.json(cart);
   } catch (err) {
     console.log(err);
     res.status(400).send(err);
@@ -62,7 +62,8 @@ router.post("/me", async (req, res) => {
     const returnUser = user.name;
     const returnEmail = user.email;
     res.json({ returnUser, returnEmail });
-  } catch (err) {
+  }
+  catch (err) {
     console.log(err);
     res.status(400).send(err);
   }

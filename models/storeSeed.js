@@ -105,7 +105,7 @@ module.exports = [
     price: 899.99,
     image:
       "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-spacegray-select-202011_GEO_US?wid=1280&hei=1190&fmt=png-alpha&.v=1632948875000",
-    rating: 5,
+    rating: 1,
   },
   {
     itemName: "Airpods (3rd generation)",
@@ -123,7 +123,7 @@ module.exports = [
     price: 1899.99,
     image:
       "https://media.cnn.com/api/v1/images/stellar/prod/210830143935-16-galaxy-z-fold-3-review-underscored.jpg?q=w_4372,h_2593,x_0,y_0,c_fill",
-    rating: 5,
+    rating: 2,
   },
   {
     itemName: "Samsung Galaxy AO3S",
@@ -132,7 +132,7 @@ module.exports = [
     price: 159.99,
     image:
       "https://m.media-amazon.com/images/I/51m45B3Yy+L._AC_SX522_.jpg",
-    rating: 3,
+    rating: 5,
   },
   {
     itemName: "Hoodies",
@@ -168,7 +168,7 @@ module.exports = [
     price: 39.99,
     image:
       "https://static.zara.net/photos///2022/V/0/1/p/4365/361/406/2/w/196/4365361406_6_1_1.jpg?ts=1644917464141",
-    rating: 4,
+    rating: 2,
   },
   {
     itemName: "Pants",
@@ -177,7 +177,7 @@ module.exports = [
     price: 49.99,
     image:
       "https://media.wired.com/photos/611c5312798f0e2c853b702f/1:1/w_993,h_993,c_limit/Gear-Cargo-Pants-are-Back-1302952122.jpg",
-    rating: 5,
+    rating: 1,
   },
   {
     itemName: "Shorts",
