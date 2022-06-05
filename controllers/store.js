@@ -30,7 +30,6 @@ router.get("/", (req, res) => {
   });
 });
 
-
 // delete data
 router.delete("/:id", (req, res) => {
   Store.findByIdAndRemove(req.params.id, { new: true }, (err, deletedStore) => {
@@ -49,6 +48,10 @@ router.put("/:id", (req, res) => {
     }
   );
 });
+
+// We should consider a route to seed the store db below
+
+// --------------------------
 
 // export to server
 module.exports = router;

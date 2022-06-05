@@ -19,7 +19,6 @@ router.post("/register", async (req, res) => {
 
   try {
     await user.save();
-    // const token = await user.generateAuthToken();
     res.status(201).send({ user });
   } catch (err) {
     res.status(400).send(err);
@@ -61,8 +60,6 @@ router.get("/me", (req, res) => {
     res.json(foundUser);
   });
 });
-
-
 
 router.post("/me", async (req, res) => {
   try {
