@@ -55,20 +55,20 @@ router.post("/me/addtocart", async (req, res) => {
     res.status(400).send(err);
   }
 });
+
 router.get("/me", (req, res) => {
   User.find({}, (err, foundUser) => {
     res.json(foundUser);
   });
 });
 
+
+
 router.post("/me", async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.body.email });
-    const returnUser = user.name;
-    const returnEmail = user.email;
-    res.json({ returnUser, returnEmail });
-  }
-  catch (err) {
+    const user = await User.findOneAndUpdate({ email: req.body.email });
+    res.json(user.cart);
+  } catch (err) {
     console.log(err);
     res.status(400).send(err);
   }
