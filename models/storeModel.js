@@ -6,7 +6,7 @@ const StoreSchema = new mongoose.Schema(
     category: String,
     description: String,
     // Price is a decimal number
-    price: mongoose.Types.Decimal128,
+    price: {type: mongoose.Types.Decimal128},
     image: String,
     rating: {
       type: Number,
