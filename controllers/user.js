@@ -55,6 +55,11 @@ router.post("/me/addtocart", async (req, res) => {
     res.status(400).send(err);
   }
 });
+router.get("/me", (req, res) => {
+  User.find({}, (err, foundUser) => {
+    res.json(foundUser);
+  });
+});
 
 router.post("/me", async (req, res) => {
   try {
