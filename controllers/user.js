@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const auth = require("../middleware/auth");
 
 const User = require("../models/userModel");
 // const userSeed = require("../models/userSeed.js");
