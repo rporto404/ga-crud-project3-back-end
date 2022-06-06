@@ -1,6 +1,6 @@
 module.exports = [
   {
-    itemName: "Basketball",
+    itemName: "basketball",
     category: "sports",
     description: "A ball used to play the sport basketball",
     price: 19.99,
@@ -9,7 +9,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Baseball",
+    itemName: "baseball",
     category: "sports",
     description: "A ball used to play the sport baseball",
     price: 29.99,
@@ -18,7 +18,7 @@ module.exports = [
     rating: 3,
   },
   {
-    itemName: "Baseball aluminum bat",
+    itemName: "baseball aluminum bat",
     category: "sports",
     description: "A bat used to play the sport baseball",
     price: 25.99,
@@ -27,7 +27,7 @@ module.exports = [
     rating: 4,
   },
   {
-    itemName: "Volleyball",
+    itemName: "volleyball",
     category: "sports",
     description: "A ball used to play the sport volleyball",
     price: 24.99,
@@ -36,7 +36,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Football",
+    itemName: "football",
     category: "sports",
     description: "A ball used to play the sport football",
     price: 24.99,
@@ -45,7 +45,7 @@ module.exports = [
     rating: 2,
   },
   {
-    itemName: "Soccer ball",
+    itemName: "soccer ball",
     category: "sports",
     description: "A ball used to play the sport soccer",
     price: 29.99,
@@ -54,7 +54,7 @@ module.exports = [
     rating: 2,
   },
   {
-    itemName: "Tennis ball",
+    itemName: "tennis ball",
     category: "sports",
     description: "A ball used to play the sport tennis",
     price: 9.99,
@@ -63,7 +63,7 @@ module.exports = [
     rating: 1,
   },
   {
-    itemName: "Tennis racket",
+    itemName: "tennis racket",
     category: "sports",
     description: "A racket used to play the sport tennis",
     price: 34.99,
@@ -72,7 +72,7 @@ module.exports = [
     rating: 4,
   },
   {
-    itemName: "Iphone 13 ",
+    itemName: "iphone 13 ",
     category: "electronics",
     description: "A smartphone developed by Apple",
     price: 999.99,
@@ -81,7 +81,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Iphone 13 Pro Max",
+    itemName: "iphone 13 pro max",
     category: "electronics",
     description: "A smartphone developed by Apple",
     price: 1199.99,
@@ -90,7 +90,7 @@ module.exports = [
     rating: 4,
   },
   {
-    itemName: "Macbook Pro",
+    itemName: "macbook pro",
     category: "electronics",
     description: "A stylish-designed laptop developed by Apple",
     price: 1499.99,
@@ -99,7 +99,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Macbook Air",
+    itemName: "macbook air",
     category: "electronics",
     description: "A stylish-designed laptop developed by Apple",
     price: 899.99,
@@ -108,7 +108,7 @@ module.exports = [
     rating: 1,
   },
   {
-    itemName: "Airpods (3rd generation)",
+    itemName: "air-pods (3rd generation)",
     category: "electronics",
     description: "A pair of wireless headphones developed by Apple",
     price: 179.99,
@@ -117,7 +117,7 @@ module.exports = [
     rating: 3,
   },
   {
-    itemName: "Samsung Galaxy Z Fold",
+    itemName: "samsung galaxy x fold",
     category: "electronics",
     description: "A smartphone developed by Samsung",
     price: 1899.99,
@@ -126,7 +126,7 @@ module.exports = [
     rating: 2,
   },
   {
-    itemName: "Samsung Galaxy AO3S",
+    itemName: "samsung galaxy aO3s",
     category: "electronics",
     description: "A smartphone developed by Samsung",
     price: 159.99,
@@ -135,7 +135,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Hoodies",
+    itemName: "hoodies",
     category: "clothes",
     description: "Warm, comfy over the head hoodies",
     price: 39.99,
@@ -144,7 +144,7 @@ module.exports = [
     rating: 4,
   },
   {
-    itemName: "Shirt",
+    itemName: "shirt",
     category: "clothes",
     description: "Cool comfy shirt for a hot summer day",
     price: 19.99,
@@ -153,7 +153,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "T-Shirt",
+    itemName: "t-shirt",
     category: "clothes",
     description: "Everyday Tee for everyone",
     price: 9.99,
@@ -162,7 +162,7 @@ module.exports = [
     rating: 3,
   },
   {
-    itemName: "Jeans",
+    itemName: "jeans",
     category: "clothes",
     description: "Be confident with your style",
     price: 39.99,
@@ -171,7 +171,7 @@ module.exports = [
     rating: 2,
   },
   {
-    itemName: "Pants",
+    itemName: "pants",
     category: "clothes",
     description: "Be confident with your style",
     price: 49.99,
@@ -180,7 +180,7 @@ module.exports = [
     rating: 1,
   },
   {
-    itemName: "Shorts",
+    itemName: "shorts",
     category: "clothes",
     description: "Let you sleep comfortably",
     price: 29.99,
@@ -189,7 +189,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Taco",
+    itemName: "tacos",
     category: "food",
     description: "Authentic Mexican dish",
     price: 5.99,
@@ -198,7 +198,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Indian Chicken Curry",
+    itemName: "indian chicken curry",
     category: "food",
     description: "Authentic Indian dish",
     price: 19.99,
@@ -207,7 +207,7 @@ module.exports = [
     rating: 4,
   },
   {
-    itemName: "Black Bean Noodles",
+    itemName: "black bean noodles dish",
     category: "food",
     description: "Authentic Korean dish",
     price: 9.99,
@@ -216,7 +216,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Black Bean Noodles",
+    itemName: "black bean noodles ",
     category: "food",
     description: "Authentic Vietnamese dish",
     price: 5.99,
@@ -225,7 +225,7 @@ module.exports = [
     rating: 3,
   },
   {
-    itemName: "Katsudon",
+    itemName: "katsudon",
     category: "food",
     description: "Authentic Japanese dish",
     price: 14.99,
@@ -234,7 +234,7 @@ module.exports = [
     rating: 5,
   },
   {
-    itemName: "Xiao Long Bao",
+    itemName: "xiao Long Bao",
     category: "food",
     description: "Authentic Chinese dish",
     price: 4.99,
